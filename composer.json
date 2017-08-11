@@ -1,0 +1,24 @@
+{
+    "name": "mf1/trailing-slash-bundle",
+    "description": "Mf1TrailingSlashBundle",
+    "type": "symfony-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Fitzpatrick",
+            "email": "fitz@michaelfitzpatrick.co.uk"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "beberlei/assert": "^2.0",
+        "symfony/framework-bundle": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5"
+    },
+    "autoload": {
+        "psr-4": { "Mf1\\TrailingSlashBundle\\": "" }
+    },
+    "minimum-stability": "stable"
+}

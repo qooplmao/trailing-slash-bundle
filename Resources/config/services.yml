@@ -1,0 +1,12 @@
+services:
+    mf1_trailing_slash.routing.loader:
+        class: Mf1\TrailingSlashBundle\Routing\TrailingSlashLoader
+        decorates: 'routing.loader'
+        arguments:
+            - '@mf1_trailing_slash.routing.loader.inner'
+            - '@mf1_trailing_slash.route.updater'
+
+    mf1_trailing_slash.route.updater:
+        class: Mf1\TrailingSlashBundle\Routing\TrailingSlashRouteUpdater
+        arguments:
+            - '%mf1_trailing_slash.rules%'
