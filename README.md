@@ -90,10 +90,19 @@ mf1_trailing_slash:
         # /remove-slash/a/ will become /remove-slash/a
         # /remove-slash/b will become /remove-slash/b
         - { path: /remove-slash/, slash: remove }
+        # /add-slash will become /add-slash/
+        # /add-slash/a will become /add-slash/a/
+        # /add-slash/b/ will become /add-slash/b/
         - { path: /add-slash, slash: add }
+        # /leave-as-default will stay as /leave-as-default
         - { path: /leave-as-default, slash: no_change }
+        # /nested/ will stay as /nested/
         - { path: /nested/, slash: no_change }
+        # /nested/add will become /nested/add/
+        # even though /nested/ is set to not change
         - { path: /nested/add, slash: add }
+        # /nested/remove/ will become /nested/remove
+        # even though /nested/ is set to not change
         - { path: /nested/remove/, slash: remove }
 ```
 
