@@ -22,7 +22,9 @@ final class TrailingSlashRouteUpdater implements TrailingSlashRouteUpdaterInterf
         Assertion::allKeyExists($rules, 'slash');
 
         foreach ($rules as $key => $rule) {
-            $rules[$key]['path'] = preg_replace('/\/$/', '', $rule['path']);
+            if ('/' !== $rule['path']) {
+                $rules[$key]['path'] = preg_replace('/\/$/', '', $rule['path']);
+            }
         }
 
         usort($rules, function($a, $b) {
